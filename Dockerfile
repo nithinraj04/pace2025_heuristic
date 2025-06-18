@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY fk2d_v4.cpp .
+COPY pace25_heuristic.cpp .
 
-RUN g++ -O2 -std=c++17 fk2d_v4.cpp -static -lglpk -lltdl -lz -o a.out
+RUN g++ -O2 -std=c++17 pace25_heuristic.cpp -static -lglpk -lltdl -lz -o a.out
 
 CMD ["file", "./a.out"]
